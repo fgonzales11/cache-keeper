@@ -1,0 +1,27 @@
+{
+  "name": "cache-keeper",
+  "version": "0.1.0",
+  "description": "A strip above the prompt: prompt-cache countdown, context size, usage limits, API-equivalent cost, cold-cache price, and one-click Handoff & Clear.",
+  "author": { "name": "Frank" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "defaultWindowMinutes": {
+      "type": "number",
+      "title": "Default cache window (minutes)",
+      "description": "Used until the real cache TTL is detected from the session. /cache-window overrides it.",
+      "default": 60
+    },
+    "warnMinutes": {
+      "type": "number",
+      "title": "Warn before cold (minutes)",
+      "description": "Send a notification this many minutes before the cache goes cold.",
+      "default": 5
+    },
+    "inputPricePerMTok": {
+      "type": "number",
+      "title": "Input price override ($ per million tokens)",
+      "description": "0 = use the built-in list-price table for the session's model.",
+      "default": 0
+    }
+  }
+}
